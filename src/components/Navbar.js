@@ -1,12 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar(props) {
+
+  const navigate= useNavigate () 
   return (
     
       
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">TextUtils</a>
+    <a className="navbar-brand" href ="/">TextUtils</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
      aria-label="Toggle navigation">
@@ -18,7 +21,7 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" aria-current ="page" href="/">{props.aboutText}</a>
+          <a className="nav-link active" aria-current ="page" href="/#/about">{props.aboutText}</a>
         </li>
         
           </ul>

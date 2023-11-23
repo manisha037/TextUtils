@@ -36,27 +36,24 @@ else{
   }
   return (
     <>
-   
-      <Navbar title= "TextUtils" mode={mode} toggleMode={toggleMode}/>
+   <HashRouter>
+
+      <Navbar aboutText= "About" title = "TextUtils" mode={mode} toggleMode={toggleMode}/>
       
       <Alert alert= {alert}/>
       <div className= "container my-3">
-      <HashRouter>
-      <Routes>
-      <Route exact path='/' element={<Homepage />} />
-        <Route exact path='/lsevents' element={<Dashboard />} />
-        <Route exact path='/ticket' element={<TicketVerification />} />
-        <Route exact path='/gen' element={<TicketGenrator />} />
-        <Route exact path='/login' element={<Login />} />
-        <Route exact path='/payment' element={<Payment />} />
-        <Route exact path='/commingsoon' element={<CoomingSoon />} />
-        <Route exact path='/bookevent/:event_id' element={<BookEvent />} />
-      </Routes>
-    </HashRouter>
       
-            <TextForm showAlert= {showAlert} heading = "enter the text to analyze below" mode={mode}/>
-          <About></About>
+      <Routes>
+      <Route exact path='/' element={< TextForm showAlert= {showAlert} heading = "enter the text to analyze below" mode={mode}/>} />
+      <Route exact path='/about' element={< About/>} />
+        
+        
+      </Routes>
+    
+      
+           
   </div>
+  </HashRouter>
  
       
     </>
